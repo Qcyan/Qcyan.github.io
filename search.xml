@@ -11,4 +11,15 @@
         <tag>-标签1</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[数组]]></title>
+    <url>%2F2018%2F05%2F22%2F%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[数组api 数组去重 1.删除数组尾部元素 2.使用对象解构 3.使用对象解构来处理数组 4.格式化 JSON 代码 5.从数组中移除重复元素 6.平铺多维数组(解构) (普通递归) ####([].concat.apply + some) concat是把两个array连接起来apply是把一个array拆开里面的元素都一个一个拿出来，可以作为函数的变量，也可以用来降数组的维数是（）]]></content>
+      <categories>
+        <category>-前端技术</category>
+      </categories>
+      <tags>
+        <tag>-方法</tag>
+      </tags>
+  </entry>
 </search>
