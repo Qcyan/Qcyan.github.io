@@ -134,27 +134,65 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-响应式与自适应布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/test/">test测试</a>
+      <a class="article-title" href="/2018/06/13/响应式与自适应布局/">响应式与自适应布局</a>
     </h1>
   
 
         
-        <a href="/2018/05/22/test/" class="archive-article-date">
-  	<time datetime="2018-05-22T14:22:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
+        <a href="/2018/06/13/响应式与自适应布局/" class="archive-article-date">
+  	<time datetime="2018-06-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>####选择加载CSS</p>
+<p>“自适应网页设计”的核心，就是CSS3引入的<code>Media Query</code>模块。</p>
+<p>它的意思就是，自动探测屏幕宽度，然后加载相应的CSS文件。</p>
+<p>　　`&lt;link rel=”stylesheet” type=”text/css”</p>
+<p>　　　　media=”screen and (max-device-width: 400px)”</p>
+<p>　　　　href=”tinyScreen.css” /&gt;`</p>
+<p>上面的代码意思是，如果屏幕宽度小于400像素（max-device-width: 400px），就加载tinyScreen.css文件。</p>
+<p>　　`&lt;link rel=”stylesheet” type=”text/css”</p>
+<p>　　　media=”screen and (min-width: 400px) and (max-device-width: 600px)”</p>
+<p>　　　　href=”smallScreen.css” /&gt;`</p>
+<p>如果屏幕宽度在400像素到600像素之间，则加载smallScreen.css文件。</p>
+<p>除了用html标签加载CSS文件，还可以在现有CSS文件中加载。</p>
+<p><code>@import  url(&quot;tinyScreen.css&quot;) screen and (max-device-width: 400px);</code></p>
+<p>####CSS的@media规则</p>
+<p>同一个CSS文件中，也可以根据不同的屏幕分辨率，选择应用不同的CSS规则。</p>
+<p>`@media  screen and (max-device-width: 400px) {</p>
+<p>　　　　.column {</p>
+<p>　　　　　　float: none;</p>
+<p>　　　　　　width:auto;</p>
+<p>　　　　}<br>　　　　#sidebar {</p>
+<p>　　　　　　display:none;</p>
+<p>　　　　}</p>
+<p>　　}`</p>
+<p>上面的代码意思是，如果屏幕宽度小于400像素，则column块取消浮动（float:none）、宽度自动调节（width:auto），sidebar块不显示（display:none）。</p>
+<p>####图片的自适应（fluid image）</p>
+<p>除了布局和文本，”自适应网页设计”还必须实现图片的自动缩放。</p>
+<p>这只要一行CSS代码：</p>
+<p>　　<code>img { max-width: 100%;}</code></p>
+<p>这行代码对于大多数嵌入网页的视频也有效，所以可以写成：</p>
+<p>　　<code>img, object { max-width: 100%;}</code></p>
+<p>老版本的IE不支持max-width，所以只好写成：</p>
+<p>　　<code>img { width: 100%; }</code></p>
+<p>此外，windows平台缩放图片时，可能出现图像失真现象。这时，可以尝试使用IE的专有命令：</p>
+<p>　　<code>img { -ms-interpolation-mode: bicubic; }</code></p>
+<p>或者，Ethan Marcotte的imgSizer.js。</p>
+<p>　　`addLoadEvent(function() {</p>
+<p>　　　　var imgs = document.getElementById(“content”).getElementsByTagName(“img”);</p>
+<p>　　　　imgSizer.collate(imgs);</p>
+<p>　　});`</p>
 
       
 
@@ -168,24 +206,13 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-标签1</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-布局</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端技术//" class="article-tag-list-link color1">-前端技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -387,7 +414,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-标签1</a>
+                <a href="javascript:void(0)" class="js-tag color4">-布局</a>
               </li>
              
               <li class="article-tag-list-item">
