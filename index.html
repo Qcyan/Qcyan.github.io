@@ -154,32 +154,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####选择加载CSS</p>
-<p>“自适应网页设计”的核心，就是CSS3引入的<code>Media Query</code>模块。</p>
+        <h4 id="选择加载CSS"><a href="#选择加载CSS" class="headerlink" title="选择加载CSS"></a>选择加载CSS</h4><p>“自适应网页设计”的核心，就是CSS3引入的<code>Media Query</code>模块。</p>
 <p>它的意思就是，自动探测屏幕宽度，然后加载相应的CSS文件。</p>
-<p>　　`&lt;link rel=”stylesheet” type=”text/css”</p>
-<p>　　　　media=”screen and (max-device-width: 400px)”</p>
-<p>　　　　href=”tinyScreen.css” /&gt;`</p>
-<p>上面的代码意思是，如果屏幕宽度小于400像素（max-device-width: 400px），就加载tinyScreen.css文件。</p>
-<p>　　`&lt;link rel=”stylesheet” type=”text/css”</p>
-<p>　　　media=”screen and (min-width: 400px) and (max-device-width: 600px)”</p>
-<p>　　　　href=”smallScreen.css” /&gt;`</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> media=<span class="string">"screen and (max-device-width:400px)"</span>  href=<span class="string">"tinyScreen.css"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>上面的代码意思是，如果屏幕宽度小于400像素（max-device-width: 400px），就加载tinyScreen.css文件。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span>  media=<span class="string">"screen and (min-width: 400px) and (max-device-width: 600px)"</span> href=<span class="string">"smallScreen.css"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>如果屏幕宽度在400像素到600像素之间，则加载smallScreen.css文件。</p>
 <p>除了用html标签加载CSS文件，还可以在现有CSS文件中加载。</p>
 <p><code>@import  url(&quot;tinyScreen.css&quot;) screen and (max-device-width: 400px);</code></p>
-<p>####CSS的@media规则</p>
-<p>同一个CSS文件中，也可以根据不同的屏幕分辨率，选择应用不同的CSS规则。</p>
-<p>`@media  screen and (max-device-width: 400px) {</p>
-<p>　　　　.column {</p>
-<p>　　　　　　float: none;</p>
-<p>　　　　　　width:auto;</p>
-<p>　　　　}<br>　　　　#sidebar {</p>
-<p>　　　　　　display:none;</p>
-<p>　　　　}</p>
-<p>　　}`</p>
+<h4 id="CSS的-media规则"><a href="#CSS的-media规则" class="headerlink" title="CSS的@media规则"></a>CSS的@media规则</h4><p>同一个CSS文件中，也可以根据不同的屏幕分辨率，选择应用不同的CSS规则。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@media  screen <span class="keyword">and</span> (max-device-<span class="symbol">width:</span> <span class="number">400</span>px) &#123;</span><br><span class="line">　　　　.column &#123;</span><br><span class="line">　　　　　　<span class="symbol">float:</span> none;</span><br><span class="line">　　　　　　<span class="symbol">width:</span>auto;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　　　<span class="comment">#sidebar &#123;</span></span><br><span class="line">　　　　　　<span class="symbol">display:</span>none;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上面的代码意思是，如果屏幕宽度小于400像素，则column块取消浮动（float:none）、宽度自动调节（width:auto），sidebar块不显示（display:none）。</p>
-<p>####图片的自适应（fluid image）</p>
-<p>除了布局和文本，”自适应网页设计”还必须实现图片的自动缩放。</p>
+<h4 id="图片的自适应（fluid-image）"><a href="#图片的自适应（fluid-image）" class="headerlink" title="图片的自适应（fluid image）"></a>图片的自适应（fluid image）</h4><p>除了布局和文本，”自适应网页设计”还必须实现图片的自动缩放。</p>
 <p>这只要一行CSS代码：</p>
 <p>　　<code>img { max-width: 100%;}</code></p>
 <p>这行代码对于大多数嵌入网页的视频也有效，所以可以写成：</p>
@@ -188,11 +172,7 @@
 <p>　　<code>img { width: 100%; }</code></p>
 <p>此外，windows平台缩放图片时，可能出现图像失真现象。这时，可以尝试使用IE的专有命令：</p>
 <p>　　<code>img { -ms-interpolation-mode: bicubic; }</code></p>
-<p>或者，Ethan Marcotte的imgSizer.js。</p>
-<p>　　`addLoadEvent(function() {</p>
-<p>　　　　var imgs = document.getElementById(“content”).getElementsByTagName(“img”);</p>
-<p>　　　　imgSizer.collate(imgs);</p>
-<p>　　});`</p>
+<p>或者，Ethan Marcotte的imgSizer.js。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　</span><br><span class="line">addLoadEvent(function() &#123;</span><br><span class="line">　　　　var imgs = document.getElementById(<span class="string">"content"</span>).getElementsByTagName(<span class="string">"img"</span>);</span><br><span class="line">　　　　imgSizer.collate(imgs);</span><br><span class="line"></span><br><span class="line">　　&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
 
