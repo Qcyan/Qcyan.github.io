@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[异步处理]]></title>
     <url>%2F2018%2F06%2F13%2F%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86%2F</url>
-    <content type="text"><![CDATA[异步方式 输出1,2，不会再到下一个中间件，因为这次的网络请求已经结束了，所以这就是异步的重要性 Promise的异步处理 ###async await的异步处理 async错误处理方法1：在函数中使用try-catch 方法2：catch每一个await表达式 因为每一个await表达式都会返回Promise,你可以对一个进行catch操作 方法3：catch整个async-await函数 扩展async正常使用： async函数返回Promise如果你想获取一个async函数的结果，你需要使用Promise的then语法 并行处理例子中，我们显示地调用了await两次，因为每次都等待了1秒钟，因此总计两秒钟。现在，我们可以使用Promise.all函数来让他们并行处理]]></content>
+    <content type="text"><![CDATA[异步方式 输出1,2，不会再到下一个中间件，因为这次的网络请求已经结束了，所以这就是异步的重要性 Promise的异步处理 ###async await的异步处理 async错误处理方法1：在函数中使用try-catch 方法2：catch每一个await表达式因为每一个await表达式都会返回Promise,你可以对一个进行catch操作 方法3：catch整个async-await函数 扩展async正常使用： async函数返回Promise如果你想获取一个async函数的结果，你需要使用Promise的then语法 并行处理例子中，我们显示地调用了await两次，因为每次都等待了1秒钟，因此总计两秒钟。现在，我们可以使用Promise.all函数来让他们并行处理]]></content>
       <tags>
         <tag>-js</tag>
       </tags>
@@ -35,7 +35,7 @@
   <entry>
     <title><![CDATA[数组方法]]></title>
     <url>%2F2018%2F05%2F22%2F%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"><![CDATA[数组api 数组去重 1.删除数组尾部元素 2.使用对象解构 3.使用对象解构来处理数组 4.格式化 JSON 代码 5.从数组中移除重复元素 6.平铺多维数组(解构) (普通递归) ####([].concat.apply + some) concat是把两个array连接起来apply是把一个array拆开里面的元素都一个一个拿出来，可以作为函数的变量，也可以用来降数组的维数是（）]]></content>
+    <content type="text"><![CDATA[数组api 数组去重 1.删除数组尾部元素 2.使用对象解构 3.使用对象解构来处理数组 4.格式化 JSON 代码 5.从数组中移除重复元素 6.平铺多维数组(解构) (普通递归) [].concat.apply + someconcat是把两个array连接起来apply是把一个array拆开里面的元素都一个一个拿出来，可以作为函数的变量，也可以用来降数组的维数是（）]]></content>
       <tags>
         <tag>-方法</tag>
       </tags>

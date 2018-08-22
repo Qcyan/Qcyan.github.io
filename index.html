@@ -389,9 +389,8 @@
 <p>输出1,2，不会再到下一个中间件，因为这次的网络请求已经结束了，所以这就是异步的重要性</p>
 <h3 id="Promise的异步处理"><a href="#Promise的异步处理" class="headerlink" title="Promise的异步处理"></a>Promise的异步处理</h3><p><img src="../images/yibu2.jpg" alt=""></p>
 <p>###async await的异步处理<br><img src="../images/yibu3.jpg" alt=""></p>
-<h2 id="async错误处理"><a href="#async错误处理" class="headerlink" title="async错误处理"></a>async错误处理</h2><p>方法1：在函数中使用try-catch<br><img src="../images/yibu4.jpg" alt=""></p>
-<p>方法2：catch每一个await表达式</p>
-<p>因为每一个await表达式都会返回Promise,你可以对一个进行catch操作<br><img src="../images/yibu5.jpg" alt=""></p>
+<h2 id="async错误处理"><a href="#async错误处理" class="headerlink" title="async错误处理"></a>async错误处理</h2><p>方法1：在函数中使用try-catch<br><img src="../images/yibu4.png" alt=""></p>
+<p>方法2：catch每一个await表达式<br>因为每一个await表达式都会返回Promise,你可以对一个进行catch操作<br><img src="../images/yibu5.jpg" alt=""></p>
 <p>方法3：catch整个async-await函数<br><img src="../images/yibu6.jpg" alt=""></p>
 <h2 id="扩展async"><a href="#扩展async" class="headerlink" title="扩展async"></a>扩展async</h2><h3 id="正常使用："><a href="#正常使用：" class="headerlink" title="正常使用："></a>正常使用：</h3><p><img src="../images/yibu7.jpg" alt=""></p>
 <h4 id="async函数返回Promise"><a href="#async函数返回Promise" class="headerlink" title="async函数返回Promise"></a>async函数返回Promise</h4><p>如果你想获取一个async函数的结果，你需要使用Promise的then语法<br><img src="../images/yibu8.jpg" alt=""></p>
@@ -481,8 +480,7 @@
 <p><img src="../images/6.jpg" alt=""></p>
 <p>(普通递归)</p>
 <p><img src="../images/7.jpg" alt=""></p>
-<p>####([].concat.apply + some)</p>
-<p>concat是把两个array连接起来<br>apply是把一个array拆开里面的元素都一个一个拿出来，可以作为函数的变量，也可以用来降数组的维数是（）<br><img src="./img/8.jpg" alt=""></p>
+<h4 id="concat-apply-some"><a href="#concat-apply-some" class="headerlink" title="[].concat.apply + some"></a>[].concat.apply + some</h4><p>concat是把两个array连接起来<br>apply是把一个array拆开里面的元素都一个一个拿出来，可以作为函数的变量，也可以用来降数组的维数是（）<br><img src="../images/8.jpg" alt=""></p>
 
       
 
